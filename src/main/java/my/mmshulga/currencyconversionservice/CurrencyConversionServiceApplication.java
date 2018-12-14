@@ -2,8 +2,10 @@ package my.mmshulga.currencyconversionservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients("my.mmshulga.currencyconversionservice.proxies")
 public class CurrencyConversionServiceApplication {
 
 	public static void main(String[] args) {
