@@ -5,7 +5,6 @@ import my.mmshulga.currencyconversionservice.proxies.CurrencyExchangeServiceProx
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/currency-converter/")
 public class CurrencyConversionController {
 
     private final CurrencyExchangeServiceProxy proxy;
@@ -25,7 +23,7 @@ public class CurrencyConversionController {
         this.proxy = proxy;
     }
 
-    @GetMapping
+    @GetMapping("/currency-converter/do")
     public CurrencyConversion convert(@RequestParam(name = "from") String from,
                                       @RequestParam(name = "to") String to,
                                       @RequestParam(name = "quantity") BigDecimal quantity) {
@@ -52,7 +50,7 @@ public class CurrencyConversionController {
         return returned;
     }
 
-    @GetMapping("/currency-converter-feign/")
+    @GetMapping("/currency-converter-feign/do")
     public CurrencyConversion convertFeign(@RequestParam(name = "from") String from,
                                       @RequestParam(name = "to") String to,
                                       @RequestParam(name = "quantity") BigDecimal quantity) {

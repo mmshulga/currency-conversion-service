@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("my.mmshulga.currencyconversionservice.proxies")
+@EnableFeignClients("my.mmshulga.currencyconversionservice")
 public class CurrencyConversionServiceApplication {
 
 	public static void main(String[] args) {
@@ -13,4 +13,3 @@ public class CurrencyConversionServiceApplication {
 	}
 
 }
-

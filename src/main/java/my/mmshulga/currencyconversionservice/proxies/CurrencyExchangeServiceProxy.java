@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "currency-exchange-service")
 @RibbonClient(name = "currency-exchange-service")
 public interface CurrencyExchangeServiceProxy {
+
     @GetMapping(name = "/currency-exchange/do")
     CurrencyConversion getExchangeValue(@RequestParam(name = "from") String from,
-                                                    @RequestParam(name = "to") String to);
+                                        @RequestParam(name = "to") String to);
 }
